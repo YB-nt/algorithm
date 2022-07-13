@@ -8,11 +8,17 @@ def solution(lottos, win_nums):
         if(num==0):
             zero_count +=1
     
+
     lotto_best = 6-(zero_count+count)+1
     if(zero_count>=6):
         lotto_worst=6
     else:
         lotto_worst = (6-count)+1
+    if(lotto_worst>6):
+        lotto_worst=6
+    if(lotto_best>6):
+        lotto_best=6
+        
     result = [lotto_best,lotto_worst]
             
         
@@ -28,9 +34,15 @@ result2= [1, 6]
 lottos3 = [45, 4, 35, 20, 3, 9]
 win_nums3 = [20, 9, 3, 45, 4, 35]
 result3 = [1, 1]
+lottos4 = [7,8,9,10,11,12]
+win_nums4 = [1,2,3,4,5,6]
+result4=[6,6]
+
 
 
 print(solution(lottos1,win_nums1) == result1)
 print(solution(lottos2,win_nums2) == result2)
 print(solution(lottos3,win_nums3) == result3)
+print(solution(lottos4,win_nums4) == result4)
+print(solution(lottos4,win_nums4) )
 
